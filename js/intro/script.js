@@ -1,31 +1,88 @@
+//1 + 2 + ... + (n-1) + n
+// console.log('Começando...')
+// function calculoRapidinho(n){
+     //fazer o seguinte teste
+     //se o valor n for pelo menos 0, continuar como já é
+     //caso contrário, devolver uma promise no estado rejected com a seguinte mensagem
+     //Somente valores positivos, por favor
+//     return n >= 0 ? Promise.resolve((n/2) * (n+1)) : Promise.reject('Somente positivos, por favor')
+// }
+// let minhaPromise = calculoRapidinho(10)
+// minhaPromise
+// .then((res) => {
+//     console.log(`Resultado: ${res}`)
+// })
+// .catch((erro) => {
+//     console.log(`Erro: ${erro}`)
+// })
+
+// let minhaPromise2 = calculoRapidinho(-6)
+// .then(res => {
+//     console.log(`Resultado: ${res}`)
+// })
+// .catch(erro => console.log(`Erro: ${erro}`))
+// console.log('Terminando...')
+
+// function f (a){
+//     console.log(a)
+// }
+// const a = 2
+// f(a)
+
+
+
+// console.log(`Começando...`)
+// function calculoDemorado(n){
+//     let p = new Promise(function (resolve, reject){
+//         let res = 0
+//         for(let i = 1; i <= n; i++){
+//             res = res + i;
+//         }
+//         resolve(res)
+//     })
+//     return p
+// }
+// let minhaPromise = calculoDemorado(10)
+//then/catch
+// minhaPromise
+// .then((somatorio) => {
+//     console.log(`Somatório: ${somatorio}.`)
+// })
+// .catch((erro) => {
+//     console.log(`Erro?: ${erro}.`)
+// })
+// console.log(`Terminando o script principal...`)
+
+
+
 //inferno de callbacks
 //callback hell
-const fs = require('fs')
-const abrirArquivo = function(nomeArquivo){
-    const exibirConteudo = function(erro, conteudo){
-        if(erro){
-            console.log(`Deu erro: ${erro}`)
-        }
-        else{
-            console.log(`Conteúdo: ${conteudo}`)
-            const dobro = Number(conteudo.toString()) * 2
-            const finalizar = function(erro){
-                if(erro){
-                    console.log(`Deu erro escrevendo o dobro: ${erro}`)
-                }
-                else{
-                    console.log('A escrita do dobro deu certo')
-                }
-            }
-            fs.writeFile('dobro.txt', dobro.toString(), finalizar)
-            console.log('Fim da exibirConteudo...')
-        }
-    }
-    fs.readFile(nomeArquivo, exibirConteudo)
-    console.log('Fim da abrirArquivo...')
-}
+// const fs = require('fs')
+// const abrirArquivo = function(nomeArquivo){
+//     const exibirConteudo = function(erro, conteudo){
+//         if(erro){
+//             console.log(`Deu erro: ${erro}`)
+//         }
+//         else{
+//             console.log(`Conteúdo: ${conteudo}`)
+//             const dobro = Number(conteudo.toString()) * 2
+//             const finalizar = function(erro){
+//                 if(erro){
+//                     console.log(`Deu erro escrevendo o dobro: ${erro}`)
+//                 }
+//                 else{
+//                     console.log('A escrita do dobro deu certo')
+//                 }
+//             }
+//             fs.writeFile('dobro.txt', dobro.toString(), finalizar)
+//             console.log('Fim da exibirConteudo...')
+//         }
+//     }
+//     fs.readFile(nomeArquivo, exibirConteudo)
+//     console.log('Fim da abrirArquivo...')
+// }
 //chamar a função daqui a pouco
-abrirArquivo("arquivo.txt")
+// abrirArquivo("arquivo.txt")
 
 // function demorada(){
 //     const atualMais2Segundos = new Date().getTime() + 2000
