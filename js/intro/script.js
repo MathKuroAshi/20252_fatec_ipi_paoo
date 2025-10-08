@@ -140,47 +140,48 @@
 //      console.log(`${op.name} : ${op(x, y)}`)
 //  }
 //  GSON
-//   const concessionaria = {
-//       cnpj: '00011122210001-45',
-//       endereco: {
-//           logradouro: 'Rua A',
-//           numero: 120,
-//           bairro: {
-//               nome: 'Vila J',
-//               regiao: 'Zona Norte'
-//           }
-//       },
-//       veiculos: {
-//           'ford': [
-//               {
-//                   modelo: 'Ka',
-//                   anoDeFabricacao: 2015
-//               },
-//               {
-//                   modelo: 'Ecosport',
-//                   anoDeFabricacao: 2018
-//               }
-//           ],
-//           'chevrolet': [
-//               {
-//                   modelo: 'Onix',
-//                   anoDeFabricacao: 2025
-//               }
-//           ]
-//       }
-//   }
-//   for(let marca of Object.keys(concessionaria.veiculos)){
-//       console.log(marca)
-//       const veiculosDaMarca = concessionaria.veiculos[marca]
-//       console.log(veiculosDaMarca)
-//       for (let veiculo of veiculosDaMarca){
-//           console.log(veiculo.modelo)
-//       }
-//   }
+  const concessionaria = {
+      cnpj: '00011122210001-45',
+      endereco: {
+          logradouro: 'Rua A',
+          numero: 120,
+          bairro: {
+              nome: 'Vila J',
+              regiao: 'Zona Norte'
+          }
+      },
+      veiculos: {
+          'ford': [
+              {
+                  modelo: 'Ka',
+                  anoDeFabricacao: 2015
+              },
+              {
+                  modelo: 'Ecosport',
+                  anoDeFabricacao: 2018
+              }
+          ],
+          'chevrolet': [
+              {
+                  modelo: 'Onix',
+                  anoDeFabricacao: 2025
+              }
+          ]
+      }
+  }
+  for(let marca of Object.keys(concessionaria.veiculos)){
+      console.log(marca)
+      const veiculosDaMarca = concessionaria.veiculos[marca]
+      console.log(veiculosDaMarca)
+      console.log("\n")
+      for (let veiculo of veiculosDaMarca){
+          console.log(veiculo.modelo)
+      }
+  }
 
-//       for(let veiculoFord of concessionaria.veiculos.ford) {
-//           console.log(veiculoFord)
-//       }
+     //  for(let veiculoFord of concessionaria.veiculos.ford) {
+     //      console.log(veiculoFord)
+     //  }
 
 //  objeto Javascript não é sinônimo de Objeto JSON (Javascript Object Notation), mas são parecidos
 //  Uma pessoa se chama Maria, tem 21 anos e mora na rua B, número 121

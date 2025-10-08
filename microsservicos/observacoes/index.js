@@ -16,7 +16,7 @@ app.use(express.json())
 */
 const observacoesPorLembrete = {}
 //POST /lembretes/1/observacoes (req, res) => {}
-app.post('lembretes/:id/observacoes', (req, res) => {
+app.post('/lembretes/:id/observacoes', (req, res) => {
     const idObs = uuidv4()
     const { texto } = req.body
     const { id : lembreteId } = req.params
@@ -25,9 +25,6 @@ app.post('lembretes/:id/observacoes', (req, res) => {
     observacoesDoLembrete.push({observacao})
     observacoesPorLembrete[lembreteId] = observacoesDoLembrete
     res.status(201).json(observacao)
-
-
-
 })
 
 //GET /lembretes/:id/observacoes (req, res) => {}
@@ -35,6 +32,12 @@ app.get('/lembretes/:id/observacoes', (req, res) => {
     //devolver a lista de observações do lembrete cujo id faz parte do path
     //ou uma lista vazia se ainda não existir
     res.status(200).json(observacoesPorLembrete[req.params.id] || [])
+})
+
+app.post('/eventos', (req, res) => {
+    const evento = req.body
+    console.log(evento)
+    res.end()
 })
 
 const port = 5000
